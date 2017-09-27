@@ -32,6 +32,9 @@
     "url": "https://github.com/bdfoster/nomatic-arangodb-adapter/issues"
   },
   "homepage": "https://github.com/bdfoster/nomatic-arangodb-adapter#readme",
+  "peerDependencies": {
+    "nomatic-data": "1.x"
+  },
   "dependencies": {
     "arangojs": "^5.7.0",
     "lodash.set": "^4.3.2",
