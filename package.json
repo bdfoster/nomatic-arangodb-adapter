@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bdfoster/nomatic-arangodb-adapter.git"
+    "url": "https://github.com/bdfoster/nomatic-arangodb-adapter.git"
   },
   "keywords": [
     "nomatic-data",
@@ -41,6 +41,7 @@
     "@types/chai": "^4.0.4",
     "@types/mocha": "^2.2.43",
     "chai": "^4.1.2",
+    "coveralls": "^2.13.1",
     "cross-env": "^5.0.5",
     "mocha": "^3.5.3",
     "nyc": "^11.2.1",
