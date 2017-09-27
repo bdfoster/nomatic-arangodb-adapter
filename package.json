@@ -1,10 +1,17 @@
 {
   "name": "nomatic-arangodb-adapter",
-  "version": "0.0.0",
   "description": "ArangoDB Adapter for nomatic-data",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run clean && tsc",
+    "clean": "rm -rf src/**/*.js src/**/*.d.ts src/**/*.js.map src/*.js src/*.d.ts src/*.js.map",
+    "lint": "tslint -c tslint.json --project tsconfig.json",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "rm -rf coverage/ && cross-env NODE_ENV=test nyc mocha --reporter spec",
+    "test:ci": "NODE_ENV=ci nyc mocha --reporter spec",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "docs": "typedoc --out ./docs/ --module commonjs --name nomatic-arangodb-adapter --hideGenerator --mode file --excludeExternals --excludePrivate --includeDeclarations ./src",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
@@ -15,12 +22,32 @@
     "nomatic",
     "adpater",
     "arangodb",
-    "data"
+    "data",
+    "adapter",
+    "nomatic-lib"
   ],
   "author": "Brian Foster <bdfoster89@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bdfoster/nomatic-arangodb-adapter/issues"
   },
-  "homepage": "https://github.com/bdfoster/nomatic-arangodb-adapter#readme"
+  "homepage": "https://github.com/bdfoster/nomatic-arangodb-adapter#readme",
+  "dependencies": {
+    "arangojs": "^5.7.0",
+    "lodash.set": "^4.3.2",
+    "nomatic-data": "^0.3.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.43",
+    "chai": "^4.1.2",
+    "cross-env": "^5.0.5",
+    "mocha": "^3.5.3",
+    "nyc": "^11.2.1",
+    "semantic-release": "^8.0.3",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.7.0",
+    "typedoc": "^0.8.0",
+    "typescript": "^2.5.3"
+  }
 }

@@ -1,0 +1,18 @@
+language: node_js
+notifications:
+  email: false
+node_js:
+  - '8'
+services:
+  - docker
+before_script:
+  - ./scripts/arangodb/start.sh
+script:
+  - npm run test:ci
+after_success:
+  - npm run coveralls
+  - npm run build
+  - npm run semantic-release
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
