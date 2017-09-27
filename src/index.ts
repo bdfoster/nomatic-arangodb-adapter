@@ -23,9 +23,6 @@ export class ArangoDBAdapter extends DatabaseAdapter {
         const url = 'http://' + options.user + ':' + options.password + '@' + options.host + ':'
             + options.port;
 
-        this._user = options.user;
-        this._password = options.password;
-
         this.client = new Database({
             url: url,
             databaseName: options.name
