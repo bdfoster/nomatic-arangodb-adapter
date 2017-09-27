@@ -1,16 +1,11 @@
 import {Database} from 'arangojs';
 import * as set from 'lodash.set';
-import {
-    AdapterOptions,
-    DatabaseAdapter,
-    RecordData,
-    Query
-} from 'nomatic-data';
+import {AdapterOptions, DatabaseAdapter, Query, RecordData} from 'nomatic-data';
 import AdapterError from 'nomatic-data/src/errors/AdapterError';
 import AlreadyExistsError from 'nomatic-data/src/errors/AlreadyExistsError';
 import AssertionError from 'nomatic-data/src/errors/AssertionError';
 import NotFoundError from 'nomatic-data/src/errors/NotFoundError';
-import {isNull, inspect} from 'util';
+import {inspect, isNull} from 'util';
 
 export interface ArangoDBAdapterOptions extends AdapterOptions {
     host: string;
@@ -326,7 +321,7 @@ export class ArangoDBAdapter extends DatabaseAdapter {
                         } else {
                             s += ` ${lookup[logicOperator]} `;
                         }
-                        for (let key in data.$where[logicOperator][i]) {
+                        for (const key in data.$where[logicOperator][i]) {
                             let aKey = key;
                             if (key === 'id') {
                                 aKey = '_key';
@@ -384,7 +379,7 @@ export class ArangoDBAdapter extends DatabaseAdapter {
                     }
 
                     if (data.$sort[i][1] < 0) {
-                        s += ' DESC'
+                        s += ' DESC';
                     }
                 }
             }
