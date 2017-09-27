@@ -1,0 +1,26 @@
+{
+  "name": "nomatic-arangodb-adapter",
+  "version": "0.0.0",
+  "description": "ArangoDB Adapter for nomatic-data",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bdfoster/nomatic-arangodb-adapter.git"
+  },
+  "keywords": [
+    "nomatic-data",
+    "nomatic",
+    "adpater",
+    "arangodb",
+    "data"
+  ],
+  "author": "Brian Foster <bdfoster89@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bdfoster/nomatic-arangodb-adapter/issues"
+  },
+  "homepage": "https://github.com/bdfoster/nomatic-arangodb-adapter#readme"
+}
