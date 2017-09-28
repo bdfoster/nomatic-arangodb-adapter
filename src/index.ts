@@ -387,6 +387,9 @@ export class ArangoDBAdapter extends DatabaseAdapter {
                 } else {
                     s += ` LIMIT ${data.$limit}`;
                 }
+            } else if (data.$skip && data.$skip !== 0) {
+                // This is a hack....
+                s += ` LIMIT ${data.$skip}, 9999999999999`;
             }
 
             if (data.$fields && data.$fields.length > 0) {

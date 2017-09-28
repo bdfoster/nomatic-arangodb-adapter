@@ -1,7 +1,7 @@
 import 'mocha';
 import {expect} from 'chai';
 import ArangoDBAdapter from '../src';
-import {RecordData, Query} from 'nomatic-data';
+import {Query, RecordData} from 'nomatic-data';
 import queries from './fixtures/queries';
 
 
@@ -285,6 +285,25 @@ describe('ArangoDBAdapter', () => {
                         'rev'
                     ]);
                 }
+            }).then(done, done);
+        });
+
+        it('should skip over 10 records', (done) => {
+            instance.findAll(collectionName, new Query(null, {
+                $skip: 10
+            })).then((results) => {
+                expect(results.length).to.equal((mock.length + data.length) - 10);
+                return instance.findAll(collectionName, new Query(null, {
+                    $limit: 10
+                })).then((skippedResults) => {
+                    expect((skippedResults.length + results.length)).to.equal((mock.length + data.length));
+
+                    for (const i in skippedResults) {
+                        for (const j in results) {
+                            expect(results[j].id).to.not.equal(skippedResults[i].id);
+                        }
+                    }
+                });
             }).then(done, done);
         });
     });
