@@ -6,6 +6,7 @@
 [![npm](https://img.shields.io/npm/v/nomatic-arangodb-adapter.svg)](https://www.npmjs.com/package/nomatic-arangodb-adapter)
 [![Build Status](https://travis-ci.org/bdfoster/nomatic-arangodb-adapter.svg?branch=greenkeeper%2Finitial)](https://travis-ci.org/bdfoster/nomatic-arangodb-adapter)
 [![Coverage Status](https://coveralls.io/repos/github/bdfoster/nomatic-arangodb-adapter/badge.svg)](https://coveralls.io/github/bdfoster/nomatic-arangodb-adapter)
+[![Known Vulnerabilities](https://snyk.io/test/github/bdfoster/nomatic-arangodb-adapter/badge.svg)](https://snyk.io/test/github/bdfoster/nomatic-arangodb-adapter)
 [![dependencies Status](https://david-dm.org/bdfoster/nomatic-arangodb-adapter/status.svg)](https://david-dm.org/bdfoster/nomatic-arangodb-adapter)
 [![devDependencies Status](https://david-dm.org/bdfoster/nomatic-arangodb-adapter/dev-status.svg)](https://david-dm.org/bdfoster/nomatic-arangodb-adapter?type=dev)
 [![License](https://img.shields.io/github/license/bdfoster/nomatic-arangodb-adapter.svg)](https://github.com/bdfoster/nomatic-arangodb-adapter/blob/master/LICENSE)
