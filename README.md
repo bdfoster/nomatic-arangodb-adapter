@@ -9,6 +9,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/bdfoster/nomatic-arangodb-adapter/badge.svg)](https://snyk.io/test/github/bdfoster/nomatic-arangodb-adapter)
 [![dependencies Status](https://david-dm.org/bdfoster/nomatic-arangodb-adapter/status.svg)](https://david-dm.org/bdfoster/nomatic-arangodb-adapter)
 [![devDependencies Status](https://david-dm.org/bdfoster/nomatic-arangodb-adapter/dev-status.svg)](https://david-dm.org/bdfoster/nomatic-arangodb-adapter?type=dev)
+[![peerDependencies Status](https://david-dm.org/bdfoster/nomatic-arangodb-adapter/peer-status.svg)](https://david-dm.org/bdfoster/nomatic-arangodb-adapter?type=peer)
 [![License](https://img.shields.io/github/license/bdfoster/nomatic-arangodb-adapter.svg)](https://github.com/bdfoster/nomatic-arangodb-adapter/blob/master/LICENSE)
 
 ArangoDB Adapter for [nomatic-data](https://github.com/bdfoster/nomatic-data)
