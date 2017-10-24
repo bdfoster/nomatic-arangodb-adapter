@@ -343,7 +343,17 @@ export class ArangoDBAdapter extends DatabaseAdapter {
                                     if (typeof data.$where[logicOperator][i][key][operator] === 'string') {
                                         value = ` "${data.$where[logicOperator][i][key][operator]}"`;
                                     } else if (data.$where[logicOperator][i][key][operator] instanceof Array) {
-                                        value = ` [${data.$where[logicOperator][i][key][operator]}]`;
+                                        const v = [];
+
+                                        for (const k in data.$where[logicOperator][i][key][operator]) {
+                                            if (typeof data.$where[logicOperator][i][key][operator][k] === 'string') {
+                                                v.push(`"${data.$where[logicOperator][i][key][operator][k]}"`);
+                                            } else {
+                                                v.push(data.$where[logicOperator][i][key][operator][k]);
+                                            }
+                                        }
+
+                                        value = ` [${v}]`;
                                     } else {
                                         value = ` ${data.$where[logicOperator][i][key][operator]}`;
                                     }

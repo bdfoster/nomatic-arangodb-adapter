@@ -13,7 +13,7 @@
     "boolean": true,
     "posts": [
       1,
-      2,
+      "2",
       3
     ]
   },

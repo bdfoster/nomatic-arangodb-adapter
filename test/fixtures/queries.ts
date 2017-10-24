@@ -110,5 +110,23 @@ export default [
                 }
             }
         ]
+    },
+    {
+        aql: 'FOR doc IN collection FILTER doc.posts ANY IN [1,"2"] RETURN doc',
+        desc: 'where doc.posts includes 1 or "2"',
+        data: [
+            {
+                $skip: 0,
+                $where: {
+                    $and: [
+                        {
+                            'posts': {
+                                $in: [1, '2']
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
     }
 ];
