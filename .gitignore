@@ -46,3 +46,5 @@ typings/
 *.tgz
 .yarn-integrity
 .env
+/test/fixtures/config/development.json
+/test/fixtures/config/test.json
