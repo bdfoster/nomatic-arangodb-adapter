@@ -298,7 +298,7 @@ export class ArangoDBAdapter extends DatabaseAdapter {
             $eq: '==',
             $gt: '>',
             $gte: '>=',
-            $in: 'IN',
+            $in: 'ANY IN',
             $lt: '<',
             $lte: '<=',
             $ne: '!=',
@@ -342,6 +342,8 @@ export class ArangoDBAdapter extends DatabaseAdapter {
                                 if (operator !== '$exists') {
                                     if (typeof data.$where[logicOperator][i][key][operator] === 'string') {
                                         value = ` "${data.$where[logicOperator][i][key][operator]}"`;
+                                    } else if (data.$where[logicOperator][i][key][operator] instanceof Array) {
+                                        value = ` [${data.$where[logicOperator][i][key][operator]}]`;
                                     } else {
                                         value = ` ${data.$where[logicOperator][i][key][operator]}`;
                                     }
