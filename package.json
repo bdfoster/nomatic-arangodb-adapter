@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/bdfoster/nomatic-arangodb-adapter#readme",
   "peerDependencies": {
-    "nomatic-data": "3.x"
+    "nomatic-data": ">= 3.0.0"
   },
   "dependencies": {
     "arangojs": "^5.7.0",
