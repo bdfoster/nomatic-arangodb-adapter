@@ -24,8 +24,7 @@ export class ArangoDBAdapter extends DatabaseAdapter {
             + options.port;
 
         this.client = new Database({
-            url: url,
-            databaseName: options.name
+            url: url
         });
 
         this.name = options.name;
@@ -51,7 +50,7 @@ export class ArangoDBAdapter extends DatabaseAdapter {
         this._password = password;
 
         if (this.user) {
-            this.client['useBasicAuth'](this._user, this._password);
+            this.client.useBasicAuth(this._user, this._password);
         }
     }
 
