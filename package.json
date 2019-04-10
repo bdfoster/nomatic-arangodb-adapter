@@ -1,6 +1,7 @@
 {
   "name": "nomatic-arangodb-adapter",
   "description": "ArangoDB Adapter for nomatic-data",
+  "version": "0.0.0-development",
   "main": "src/index.js",
   "scripts": {
     "build": "tsc",
@@ -11,7 +12,7 @@
     "test:ci": "NODE_ENV=ci nyc mocha --reporter spec",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "docs": "typedoc --out ./docs/ --module commonjs --name nomatic-arangodb-adapter --hideGenerator --mode file --excludeExternals --excludePrivate --includeDeclarations --gaID UA-96699243-1 ./src",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
