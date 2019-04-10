@@ -1,17 +1,18 @@
 {
   "name": "nomatic-arangodb-adapter",
   "description": "ArangoDB Adapter for nomatic-data",
+  "version": "0.0.0-development",
   "main": "src/index.js",
   "scripts": {
-    "build": "npm run clean && tsc",
+    "build": "tsc",
     "clean": "rm -rf src/**/*.js src/**/*.d.ts src/**/*.js.map src/*.js src/*.d.ts src/*.js.map",
     "lint": "tslint -c tslint.json --project tsconfig.json",
     "lint:fix": "npm run lint -- --fix",
-    "test": "rm -rf coverage/ && cross-env NODE_ENV=test nyc mocha --reporter spec",
+    "test": "cross-env NODE_ENV=test nyc mocha --reporter spec",
     "test:ci": "NODE_ENV=ci nyc mocha --reporter spec",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "docs": "typedoc --out ./docs/ --module commonjs --name nomatic-arangodb-adapter --hideGenerator --mode file --excludeExternals --excludePrivate --includeDeclarations --gaID UA-96699243-1 ./src",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
@@ -36,22 +37,22 @@
     "nomatic-data": ">= 3.0.0"
   },
   "dependencies": {
-    "arangojs": "^5.7.0",
+    "arangojs": "^6.10.0",
     "lodash.set": "^4.3.2"
   },
   "devDependencies": {
     "@types/chai": "^4.0.4",
-    "@types/mocha": "^2.2.43",
+    "@types/mocha": "^5.2.6",
     "chai": "^4.1.2",
     "coveralls": "^3.0.0",
     "cross-env": "^5.0.5",
     "nomatic-data": "^4.0.1",
-    "mocha": "^4.0.0",
-    "nyc": "^11.2.1",
-    "semantic-release": "^8.0.3",
-    "ts-node": "^3.3.0",
+    "mocha": "^6.1.2",
+    "nyc": "^13.3.0",
+    "semantic-release": "^15.13.3",
+    "ts-node": "^8.0.3",
     "tslint": "^5.7.0",
-    "typedoc": "^0.9.0",
-    "typescript": "^2.5.3"
+    "typedoc": "^0.14.2",
+    "typescript": "^3.4.3"
   }
 }

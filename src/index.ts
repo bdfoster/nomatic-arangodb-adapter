@@ -24,8 +24,7 @@ export class ArangoDBAdapter extends DatabaseAdapter {
             + options.port;
 
         this.client = new Database({
-            url: url,
-            databaseName: options.name
+            url: url
         });
 
         this.name = options.name;
@@ -51,7 +50,7 @@ export class ArangoDBAdapter extends DatabaseAdapter {
         this._password = password;
 
         if (this.user) {
-            this.client['useBasicAuth'](this._user, this._password);
+            this.client.useBasicAuth(this._user, this._password);
         }
     }
 
@@ -236,24 +235,16 @@ export class ArangoDBAdapter extends DatabaseAdapter {
     }
 
     public getDatabaseNames(): Promise<string[]> {
+        const currentDatabase = this.name;
+        if (this.name != '_system') {
+           this.name = '_system';
+        }
         return this.client.listDatabases().then((list) => {
             if (!list || !(list instanceof Array)) {
                 list = [];
             }
-
+            this.name = currentDatabase;
             return list;
-        }).catch((error) => {
-            if (error.name === 'ArangoError' && error['errorNum'] === 1228 && this.name !== '_system') {
-                const currentDatabase = this.name;
-                this.name = '_system';
-                return this.getDatabaseNames().then((list) => {
-                    this.name = currentDatabase;
-                    return list;
-                });
-            }
-
-            this.handleError(error);
-            return [];
         });
     }
 

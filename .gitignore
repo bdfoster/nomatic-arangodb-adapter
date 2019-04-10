@@ -48,3 +48,9 @@ typings/
 .env
 /test/fixtures/config/development.json
 /test/fixtures/config/test.json
+/src/**/*.js
+/src/*.js
+/src/**/*.js.map
+/src/*.js.map
+/src/**/*.d.ts
+/src/*.d.ts
