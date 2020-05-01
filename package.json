@@ -37,7 +37,7 @@
     "nomatic-data": ">= 3.0.0"
   },
   "dependencies": {
-    "arangojs": "^6.10.0",
+    "arangojs": "^6.14.1",
     "lodash.set": "^4.3.2"
   },
   "devDependencies": {
